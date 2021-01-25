@@ -1,0 +1,877 @@
+﻿@model Microsoft.AspNetCore.Html.HtmlString
+            <div class="twoThirds">
+                    @Html.Raw(Model)
+            </div>
+
+
+    <style>
+    .twoThirds{
+        width:66%;
+        margin: 0;
+        padding-left:7%;
+        padding-right:3%;
+    }
+        body {
+            -moz-osx-font-smoothing: grayscale;
+            -webkit-font-smoothing: antialiased;
+            background-color: #f0f4f5;
+            color: #212b32;
+            font-size: 1.1875rem;
+            line-height: 1.47368;
+            margin: 0;
+            min-height: 100%;
+            font-family: Arial;
+            margin-bottom: 50px;
+        }
+        .top {
+            margin-bottom: 25px;
+            margin-top: 25px;
+        }
+    b {
+        font-weight:bold;
+    }
+    h1 {
+        display: block;
+        font-size: 3rem;
+        line-height: 1.16667;
+        font-weight: 600;
+        margin-top:50px;
+        margin-bottom:50px;
+    }
+        h2 {
+            display: block;
+            font-size: 2rem;
+            line-height: 1.16667;
+            font-weight: 600;
+            margin-top: 50px;
+            margin-bottom: 50px;
+        }
+        h3 {
+            display: block;
+            font-size: 2rem;
+            line-height: 1.16667;
+            font-weight: 600;
+            margin-top: 50px;
+            margin-bottom: 50px;
+        }
+        h4 {
+            display: block;
+            font-size: 2rem;
+            line-height: 1.16667;
+            font-weight: 600;
+            margin-top: 50px;
+            margin-bottom: 50px;
+        } 
+        h5 {
+            display: block;
+            font-size: 2rem;
+            line-height: 1.16667;
+            font-weight: 600;
+            margin-top: 50px;
+            margin-bottom: 50px;
+        }
+    ul{
+        padding-left: 20px;
+    }
+    li {
+        margin-bottom: 10px;
+    }
+    .video {
+        position: relative !important;
+        width: 100% !important;
+        height: 0 !important;
+        padding-bottom: 56.25% !important;
+    }
+
+    .video-js {
+        position: relative !important;
+        max-width: 100% !important;
+        height: auto !important;
+        padding-bottom: 56.25% !important;
+    }
+
+    .text {
+        text-align: left;
+        position: center;
+        width: auto;
+        height: auto;
+    }
+
+        .text h2 {
+            text-align: left;
+            font-size: x-large;
+            font-weight: 600;
+            margin-bottom: 30px;
+        }
+
+        .text p {
+            font-size: medium;
+            font-weight: 200;
+            margin-bottom: 20px;
+        }
+
+        .text b {
+            font-size: large;
+            font-weight: 600;
+            margin-bottom: 20px;
+        }
+
+    .Findaservice {
+        font-size: larger;
+        font-weight: 600;
+        color: blue;
+        text-decoration: none;
+    }
+
+        .Findaservice p:before {
+            content: '➲';
+            color: green;
+        }
+
+        .Findaservice a {
+            margin: 5px;
+        }
+
+        .Findaservice a:hover {
+            margin: 2px;
+            border: medium solid;
+            border-color: yellow;
+            text-decoration: none;
+            color: black;
+        }
+
+    .information {
+        border-left-style: solid;
+        border-left-width: 10px;
+        border-left-color: blue;
+        padding-left: 10px;
+    }
+        .Information {
+            border-left-style: solid;
+            border-left-width: 10px;
+            border-left-color: blue;
+            padding-left: 10px;
+        }
+
+        .Information p {
+            font-size: medium;
+            font-weight: 200;
+            margin-bottom: 20px;
+        }
+
+
+        .Callout h2 {
+            background-color: #ffeb3b;
+            color: #212b32;
+            display: inline-block;
+            padding: 8px 32px;
+            position: relative;
+            top: 0;
+            z-index: 3
+        }
+        .Callout h3 {
+            background-color: #ffeb3b;
+            color: #212b32;
+            display: inline-block;
+            padding: 8px 32px;
+            position: relative;
+            top: 0;
+            z-index: 3
+        }
+        .Callout h4 {
+            background-color: #ffeb3b;
+            color: #212b32;
+            display: inline-block;
+            padding: 8px 32px;
+            position: relative;
+            top: 0;
+            z-index: 3
+        }
+        .Callout h5 {
+            background-color: #ffeb3b;
+            color: #212b32;
+            display: inline-block;
+            padding: 8px 32px;
+            position: relative;
+            top: 0;
+            z-index: 3
+        }
+        .Callout p {
+            position: relative;
+            top: -75px;
+            display: block;
+            margin: 0;
+            padding: 25px;
+            padding-top: 50px;
+            background-color: #fff9c4;
+            z-index: 1;
+        }
+        .Callout p a{
+
+            z-index: 3;
+        }
+        .Callout ul {
+            position: relative;
+            top: -75px;
+            margin: 0;
+            padding: 25px;
+            padding-top: 50px;
+            background-color: #fff9c4;
+            z-index: 1;
+        }
+        .Primarycare h2 {
+            position: relative;
+            padding: 10px;
+            padding-left: 40px;
+            margin: 0;
+            border: 0;
+            background-color: #005eb8;
+            color: white;
+            z-index: 3;
+        }
+
+            .Primarycare h2:after {
+                content: '';
+                position: absolute;
+                top: 100%;
+                left: 20px;
+                width: 0;
+                height: 0;
+                border-top: solid 15px #005eb8;
+                border-left: solid 15px transparent;
+                border-right: solid 15px transparent;
+                z-index: 3;
+            }
+        .Primarycare h3 {
+            position: relative;
+            padding: 10px;
+            padding-left: 40px;
+            margin: 0;
+            border: 0;
+            background-color: #005eb8;
+            color: white;
+            z-index: 3;
+        }
+
+            .Primarycare h3:after {
+                content: '';
+                position: absolute;
+                top: 100%;
+                left: 20px;
+                width: 0;
+                height: 0;
+                border-top: solid 15px #005eb8;
+                border-left: solid 15px transparent;
+                border-right: solid 15px transparent;
+                z-index: 3;
+            }
+        .Primarycare h4 {
+            position: relative;
+            padding: 10px;
+            padding-left: 40px;
+            margin: 0;
+            border: 0;
+            background-color: #005eb8;
+            color: white;
+            z-index: 3;
+        }
+
+            .Primarycare h4:after {
+                content: '';
+                position: absolute;
+                top: 100%;
+                left: 20px;
+                width: 0;
+                height: 0;
+                border-top: solid 15px #005eb8;
+                border-left: solid 15px transparent;
+                border-right: solid 15px transparent;
+                z-index: 3;
+            }
+        .Primarycare h5 {
+            position: relative;
+            padding: 10px;
+            padding-left: 40px;
+            margin: 0;
+            border: 0;
+            background-color: #005eb8;
+            color: white;
+            z-index: 3;
+        }
+
+                .Primarycare h5:after {
+                    content: '';
+                    position: absolute;
+                    top: 100%;
+                    left: 20px;
+                    width: 0;
+                    height: 0;
+                    border-top: solid 15px #005eb8;
+                    border-left: solid 15px transparent;
+                    border-right: solid 15px transparent;
+                    z-index: 3;
+                }
+
+        .Primarycare ul {
+            position: relative;
+            top: -20px;
+            padding: 20px;
+            padding-top: 30px;
+            padding-left: 40px;
+            background-color: white;
+            z-index: 1;
+        }
+
+        .Urgent h2 {
+            position: relative;
+            padding: 10px;
+            padding-left: 40px;
+            margin: 0;
+            border: 0;
+            background-color: #d5281b;
+            color: white;
+        }
+
+        .Urgent h2:after {
+            content: '';
+            position: absolute;
+            top: 100%;
+            left: 20px;
+            width: 0;
+            height: 0;
+            border-top: solid 15px #d5281b;
+            border-left: solid 15px transparent;
+            border-right: solid 15px transparent;
+        }
+        .Urgent h3 {
+            position: relative;
+            padding: 10px;
+            padding-left: 40px;
+            margin: 0;
+            border: 0;
+            background-color: #d5281b;
+            color: white;
+        }
+
+            .Urgent h3:after {
+                content: '';
+                position: absolute;
+                top: 100%;
+                left: 20px;
+                width: 0;
+                height: 0;
+                border-top: solid 15px #d5281b;
+                border-left: solid 15px transparent;
+                border-right: solid 15px transparent;
+            }
+        .Urgent h4 {
+            position: relative;
+            padding: 10px;
+            padding-left: 40px;
+            margin: 0;
+            border: 0;
+            background-color: #d5281b;
+            color: white;
+        }
+
+            .Urgent h4:after {
+                content: '';
+                position: absolute;
+                top: 100%;
+                left: 20px;
+                width: 0;
+                height: 0;
+                border-top: solid 15px #d5281b;
+                border-left: solid 15px transparent;
+                border-right: solid 15px transparent;
+            }
+            .Urgent h5 {
+            position: relative;
+            padding: 10px;
+            padding-left: 40px;
+            margin: 0;
+            border: 0;
+            background-color: #d5281b;
+            color: white;
+        }
+
+            .Urgent h5:after {
+                content: '';
+                position: absolute;
+                top: 100%;
+                left: 20px;
+                width: 0;
+                height: 0;
+                border-top: solid 15px #d5281b;
+                border-left: solid 15px transparent;
+                border-right: solid 15px transparent;
+            }
+
+    .Urgent div {
+        /*width: 40%;*/
+        padding: 20px;
+        padding-top: 30px;
+        padding-left: 40px;
+        background-color: white;
+    }
+        .Urgent .block-richtext h4 {
+            padding: 0px;
+            padding-bottom: 10px;
+            margin: 0;
+            border: 0;
+            background-color: transparent;
+            color: black;
+        }
+            .Urgent .block-richtext h4:after {
+                border-top: 0;
+                border-left: 0;
+                border-right: 0;
+            }
+        .Emergency h2 {
+            position: relative;
+            /*width: 40%;*/
+            padding: 10px;
+            padding-left: 40px;
+            margin: 0;
+            border: 0;
+            background-color: #d5281b;
+            color: white;
+        }
+
+            .Emergency h2:after {
+                content: '';
+                position: absolute;
+                top: 100%;
+                left: 20px;
+                width: 0;
+                height: 0;
+                border-top: solid 15px #d5281b;
+                border-left: solid 15px transparent;
+                border-right: solid 15px transparent;
+            }
+        .Emergency h3 {
+            position: relative;
+            /*width: 40%;*/
+            padding: 10px;
+            padding-left: 40px;
+            margin: 0;
+            border: 0;
+            background-color: #d5281b;
+            color: white;
+        }
+
+        .Emergency h3:after {
+            content: '';
+            position: absolute;
+            top: 100%;
+            left: 20px;
+            width: 0;
+            height: 0;
+            border-top: solid 15px #d5281b;
+            border-left: solid 15px transparent;
+            border-right: solid 15px transparent;
+        }
+        .Emergency h4 {
+            position: relative;
+            /*width: 40%;*/
+            padding: 10px;
+            padding-left: 40px;
+            margin: 0;
+            border: 0;
+            background-color: #d5281b;
+            color: white;
+        }
+        .Emergency h5 {
+            position: relative;
+            /*width: 40%;*/
+            padding: 10px;
+            padding-left: 40px;
+            margin: 0;
+            border: 0;
+            background-color: #d5281b;
+            color: white;
+        }
+
+            .Emergency h4:after {
+                content: '';
+                position: absolute;
+                top: 100%;
+                left: 20px;
+                width: 0;
+                height: 0;
+                border-top: solid 15px #d5281b;
+                border-left: solid 15px transparent;
+                border-right: solid 15px transparent;
+            }
+    .Emergency div {
+        /*width: 40%;*/
+        padding: 20px;
+        padding-top: 30px;
+        padding-left: 40px;
+        background-color: #212b32;
+        color: white;
+    }
+
+        .Treatmentcard h2 {
+            position: relative;
+            background-color: #005eb8;
+            color: #fff;
+            display: inline-block;
+            padding: 8px 32px;
+            top: 0;
+            z-index: 3
+        }
+
+        .Treatmentcard h3 {
+            position: relative;
+            background-color: #005eb8;
+            color: #fff;
+            display: inline-block;
+            padding: 8px 32px;
+            top: 0;
+            z-index: 3
+        }
+
+        .Treatmentcard h4 {
+            position: relative;
+            background-color: #005eb8;
+            color: #fff;
+            display: inline-block;
+            padding: 8px 32px;
+            top: 0;
+            z-index: 3
+        }
+        .Treatmentcard h5 {
+            position: relative;
+            background-color: #005eb8;
+            color: #fff;
+            display: inline-block;
+            padding: 8px 32px;
+            top: 0;
+            z-index: 3
+        }
+
+        .Treatmentcard p {
+            position: relative;
+            top: -75px;
+            display: block;
+            margin: 0;
+            padding: 25px;
+            padding-top: 50px;
+            background-color: #fff;
+            z-index: 1;
+        }
+
+        .Treatmentcard ul {
+            position: relative;
+            top: -75px;
+            display: block;
+            margin: 0;
+            padding: 25px;
+            padding-top: 50px;
+            padding-left: 50px;
+            background-color: #fff;
+            z-index: 1;
+        }
+
+        .DoDont {
+            position: relative;
+        }
+        .DoDont div{
+            margin-top:25px;
+            margin-bottom:100px;
+        }
+
+            .DoDont h2 {
+                background-color: #005eb8;
+                color: #212b32;
+                display: inline-block;
+                padding: 8px 32px;
+                position: absolute;
+                color: #fff;
+                top: 0;
+                z-index: 3
+            }
+            .DoDont h3 {
+                background-color: #005eb8;
+                color: #212b32;
+                display: inline-block;
+                padding: 8px 32px;
+                position: absolute;
+                color: #fff;
+                top: 0;
+                z-index: 3
+            }
+            .DoDont h4 {
+                background-color: #005eb8;
+                color: #212b32;
+                display: inline-block;
+                padding: 8px 32px;
+                position: absolute;
+                color: #fff;
+                top: 0;
+                z-index: 3
+            }
+            .DoDont h5 {
+                background-color: #005eb8;
+                color: #212b32;
+                display: inline-block;
+                padding: 8px 32px;
+                position: absolute;
+                color: #fff;
+                top: 0;
+                z-index: 3
+            }
+
+            .DoDont ul {
+                position: relative;
+                top: 75px;
+                display: block;
+                margin-top: 0;
+                padding: 25px;
+                padding-top: 50px;
+                background-color: #fff;
+                z-index: 2;
+                list-style: none;
+                margin-bottom: 50px;
+            }
+
+    .do li::marker {
+        content: '✓';
+        color: green;
+        font-weight: 900;
+        margin-right:15px;
+    }
+
+        .dont li::marker {
+            content: '✘';
+            color: red;
+            margin-right: 15px;
+        }
+
+    .Reveal {
+        padding: 20px;
+        position: relative;
+        padding-bottom: 0;
+        margin-bottom: 20px;
+    }
+
+        .Reveal h2 {
+            padding-left: 5px;
+            margin-bottom: 10px;
+            text-decoration: underline;
+            color: dodgerblue;
+            display: block;
+            font-size: medium;
+            margin-top: 5px;
+            margin-bottom: 15px;
+        }
+        .Reveal h3 {
+            padding-left: 5px;
+            margin-bottom: 10px;
+            text-decoration: underline;
+            color: dodgerblue;
+            display: block;
+            font-size: medium;
+            margin-top: 5px;
+            margin-bottom: 15px;
+        }
+        .Reveal h4 {
+            padding-left: 5px;
+            margin-bottom: 10px;
+            text-decoration: underline;
+            color: dodgerblue;
+            display: block;
+            font-size: medium;
+            margin-top:5px;
+            margin-bottom:15px;
+        }
+        .Reveal h5 {
+            padding-left: 5px;
+            margin-bottom: 10px;
+            text-decoration: underline;
+            color: dodgerblue;
+            display: block;
+            font-size: medium;
+            margin-top:5px;
+            margin-bottom:15px;
+        }
+
+
+
+        .chq {
+            padding: 20px;
+            position: relative;
+            padding-bottom: 0;
+            margin-bottom: 30px;
+            color: dodgerblue;
+            
+        }
+
+        .chq h3 {
+            padding-left: 20px;
+            margin-bottom: 10px;
+            text-decoration: underline;
+            color: dodgerblue;
+        }
+
+        .answer p {
+            padding-left: 5px;
+            padding-top: 30px;
+            margin-bottom: 30px;
+            text-decoration: none;
+            color: black;
+        }
+            .answer p a {
+                padding: 0px;
+            }
+        .answer ul {
+            color: black;
+            padding-left: 25px;
+        }
+        .answer li {
+            padding: 0px;
+            color: black;
+        }
+        .answer li a {
+            padding: 0px;
+        }
+
+        /*.chq p {
+            display: none;
+            color: black;
+            text-decoration: none;
+        }*/
+
+    .hiding::before {
+        content: '';
+        position: absolute;
+        top: 25px;
+        left: 10px;
+        width: 0;
+        height: 0;
+        border-top: 10px solid transparent;
+        border-left: 10px solid blue;
+        border-bottom: 10px solid transparent;
+    }
+        .hiding * {
+            display: none;
+        }
+
+    .showing::before {
+        content: '';
+        position: absolute;
+        top: 30px;
+        left: 0;
+        width: 0;
+        height: 0;
+        border-top: solid 10px blue;
+        border-left: solid 10px transparent;
+        border-right: solid 10px transparent;
+    }
+
+        .showing * {
+            display: normal;
+            padding-left: 10px;
+            padding-right: 10px;
+        }
+        .showing div {
+            border-left: 4px solid #d8dde0;
+            margin-bottom:0;
+            margin-top:0;
+            padding-bottom:0;
+            padding-top:0;
+        }
+        .showing a {
+            padding-right: 0;
+        }
+        
+
+    table thead {
+        border-bottom: 4px solid #d8dde0;
+        padding-bottom: 50px;
+        padding-top: 50px;
+    }
+
+    table tr {
+        border-bottom: 1px solid #d8dde0;
+        padding-bottom:100px;
+        padding-top:100px;
+    }
+    table th {
+        padding-bottom:20px;
+        padding-top:20px;
+    }
+
+        table td {
+            padding-left: 10px;
+            padding-right: 10px;
+            padding-bottom: 20px;
+            padding-top: 20px;
+            font-size: 1.1875rem;
+        }
+        details h3 {
+            margin-top: 15px;
+            margin-bottom: 15px;
+            margin-bottom: 15px;
+            font-size: 1.1875rem;
+            line-height: 1.47368;
+        }
+        .nhsuk-details__text {
+            border-left: 4px solid #d8dde0;
+        }
+        summary {
+            color: cornflowerblue;
+        }
+        summary span{
+        color: cornflowerblue;
+        }
+        .nhsuk-expander-group details{
+            background-color:white;
+            padding-top: 30px;
+            padding-bottom: 30px;
+            padding-left: 20px;
+            margin-bottom: 10px;
+
+        }
+    .nhsuk-expander-group summary ::marker { content: '⊕'; }
+    svg{
+        width:50px;
+        height:50px;
+    }
+    </style>
+
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/jquery/dist/jquery.js"></script>
+    <script>
+        function toggleHide(target) {
+            if (target.hasClass("hiding")) {
+                target.removeClass("hiding");
+                target.addClass("showing");
+            }
+            else {
+                target.removeClass("showing");
+                target.addClass("hiding");
+            }
+        }
+        $(document).ready(function () {
+            $("div .Reveal").addClass("hiding");
+            $("div .chq").addClass("hiding");
+
+            $(".Reveal").on("click", function(){
+                toggleHide($(this));
+            });
+            $(".chq").on("click", function () {
+                toggleHide($(this));
+            });
+
+            $('.DoDont').each(function () {
+                if ($(this).find('h3').text() == "Do") {
+                    $(this).find('ul').addClass('do');
+                }
+                else
+                    $(this).find('ul').addClass('dont');
+            });
+
+        });
+    </script>

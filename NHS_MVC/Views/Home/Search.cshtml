@@ -1,0 +1,279 @@
+﻿<style>
+    body {
+        -moz-osx-font-smoothing: grayscale;
+        -webkit-font-smoothing: antialiased;
+        background-color: #f0f4f5;
+        color: #212b32;
+        font-size: 1.1875rem;
+        line-height: 1.47368;
+        margin: 0;
+        min-height: 100%;
+        font-family: Arial;
+        margin-bottom: 50px;
+    }
+
+    .text-center {
+        text-align: center;
+        margin-left: 25%;
+        margin-right: 25%;
+    }
+
+    p {
+        position: relative;
+        width: 50px;
+        height: 50px;
+        line-height: 50px;
+        text-align: center;
+        top: 40px;
+        background-color: #005eb8;
+        color: white;
+        font-size: 2rem;
+        font-weight: bolder;
+        z-index: 1;
+    }
+
+    table {
+        width: 100%;
+        border-top: thin solid #005eb8;
+        margin-bottom: 10px;
+        padding-top: 25px;
+    }
+    /*        table::before {
+            content: "A";
+            position: relative;
+            top: -75px;
+            margin: 0;
+            padding: 25px;
+            padding-top: 50px;
+            background-color: #fff9c4;
+            z-index: 1;
+        }*/
+    tr:first-child td {
+        padding-top: 45px;
+    }
+
+    tr:nth-child(10n+1) td {
+        padding-top: 45px;
+    }
+
+    table tr {
+        text-align: left;
+        background-color: #ffffff;
+        text-decoration: none;
+        border-bottom: thin solid #D8DDE0;
+        padding: 10px;
+    }
+
+        table tr:hover {
+            text-decoration: underline;
+            color: red;
+        }
+
+        table tr:active {
+            background-color: #FFEB3B;
+            border-bottom: 10px solid black
+        }
+
+    table td {
+        padding: 15px;
+    }
+
+
+    button {
+        align-self: initial;
+    }
+
+    #navBar {
+        text-align: center;
+        margin-top: 20px;
+    }
+
+        #navBar button {
+            display: inline;
+            border: none;
+            background-color: #f0f4f5;
+            color: Highlight;
+            text-decoration: underline;
+            margin: auto;
+            margin-left: 5px;
+            margin-right: 5px;
+            outline: none;
+        }
+
+            #navBar button:disabled {
+                border: none;
+                background-color: #f0f4f5;
+                color: #808080;
+                text-decoration: none;
+            }
+
+                #navBar button:disabled:hover {
+                    border: none;
+                    background-color: #f0f4f5;
+                    color: #808080;
+                    text-decoration: none;
+                }
+
+            #navBar button:hover {
+                color: #945276;
+                text-decoration: none;
+            }
+
+            #navBar button:active {
+                background-color: #FFEB3B;
+                border-left: 0px;
+                border-right: 0px;
+                border-top: 0px;
+                border-bottom: 5px solid black;
+                outline:none;
+            }
+
+    #navBarOther {
+        text-align: center;
+    }
+
+        #navBarOther button {
+            margin-bottom: 10px;
+            background-color: #005eb8;
+            border: none;
+            color: white;
+            font-weight: bolder;
+            outline:none;
+        }
+            #navBarOther button:disabled {
+                margin-bottom: 10px;
+                background-color: #898989;
+                border: none;
+                color: #c1c1c1;
+                font-weight: bolder;
+            }#navBarOther button:disabled:hover {
+                margin-bottom: 10px;
+                background-color: #898989;
+                border: none;
+                color: #c1c1c1;
+                font-weight: bolder;
+            }
+            #navBarOther button:active {
+                margin-bottom: 10px;
+                background-color: #FFEB3B;
+            }
+            #navBarOther button:hover {
+                margin-bottom: 10px;
+                background-color: Highlight;
+            }
+</style>
+<div id="navBar">
+    @for (int i = 0; i < 26; i++)
+    {
+        <button id='@((char)('A' + i))' onclick='goToLetter(this);'>@((char)('A' + i))</button>
+    }
+</div>
+<div class="text-center">
+
+    <div>
+        <p></p>
+        <table id="pagedTable">
+        </table>
+        <div id="navBarOther">
+            <button id="firstButton" onclick='first();'>First Page</button>
+            <button id="prevButton" onclick='prev();'>Previous Page</button>
+            <button id="nextButton" onclick='next();'>Next Page</button>
+            <button id="lastButton" onclick='last();'>Last Page</button>
+            <br />
+            <button id="prevLButton" onclick='prevLetter();'>Previous Letter</button>
+            <button id="nextLButton" onclick='nextLetter();'>Next Letter</button>
+        </div>
+    </div>
+    
+</div>
+
+
+<script src="~/lib/jquery/dist/jquery.min.js"></script>
+<script src="~/lib/jquery/dist/jquery.js"></script>
+<script>
+    var pos = 0;
+    var max = 0;
+    var letter = '@ViewBag.letter';
+    function table() {
+        max = @(((Dictionary<string,string>)ViewBag.conditionTable).Count())
+    @foreach(var item in (Dictionary<string, string>)ViewBag.conditionTable)
+        {
+            <text>
+            x = '@item.Value';
+                        $("#pagedTable").append("<tr> <td> " +
+            "<a href='" + '@item.Value'+"'> " +
+            '@item.Key' +"</a>" +
+          "</td> </tr>");
+            </text>
+        }
+        var trs = $('#pagedTable > tr');
+        trs.hide();
+        if (pos + 10 > max) {
+            trs.slice(pos, max).show();
+        }
+        else
+            trs.slice(pos, pos + 10).show();
+        disableButton();
+    };
+
+    function first() {
+        pos = 0;
+        table();
+    }
+      function last() {
+        pos = max - 10;
+        table();
+    }
+    function next() {
+        pos += 10;
+        table();
+    }
+    function prev() {
+        pos -= 10;
+        table();
+    }
+        function disableButton() {
+        $('#'+letter).prop('disabled',true).css('color', 999);
+        if (pos >= max - 10) {
+            $('#lastButton').prop('disabled',true).css('color', 999);
+            $('#nextButton').prop('disabled',true).css('color', 999);
+        }
+        else {
+            $('#lastButton').prop('disabled',false).css('color', 555555);
+            $('#nextButton').prop('disabled',false).css('color', 555555);
+        }
+        if (pos < 10) {
+            $('#firstButton').prop('disabled',true).css('color', 999);
+            $('#prevButton').prop('disabled',true).css('color', 999);
+        }
+        else {
+            $('#firstButton').prop('disabled',false).css('color', 555555);
+            $('#prevButton').prop('disabled',false).css('color', 555555);
+        }
+        if (letter == 'A') {
+            $('#prevLButton').prop('disabled', true).css('color', 999);
+        }
+        else {
+            $('#prevLButton').prop('disabled', false).css('color', 555555);
+        }
+        if (letter == 'Z')
+            $('#nextLButton').prop('disabled', true).css('color', 999);
+        else
+            $('#nextLButton').prop('disabled', false).css('color', 555555);
+    }
+    function nextLetter() {
+        window.location.href = '@Url.ActionLink("updateViewBag","Home", new { _letter = (char)(ViewBag.letter+1)},null)'
+    }
+    function prevLetter() {
+            window.location.href = '@Url.ActionLink("updateViewBag","Home", new { _letter = (char)(ViewBag.letter-1)},null)'
+    }
+        function goToLetter(letter) {
+            var temp = '@Url.ActionLink("updateViewBag","Home", new { _letter = -1},null)'
+            temp = temp.replace(-1, $(letter).attr('id'));
+            window.location.href = temp;
+    }
+        $(document).ready(function () {
+            document.querySelector('p').innerHTML = letter;
+  table();
+});
+</script>
